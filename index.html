@@ -29,8 +29,8 @@
             width: 100%;
             height: 100%;
             background: 
-                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50,15 C55,5 65,10 70,20 C80,30 75,40 65,45 C55,50 50,40 45,35 C35,35 20,40 25,20 C30,10 40,5 50,15" fill="rgba(212,175,55,0.08)" opacity="0.3"/></svg>') repeat,
-                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50,20 Q60,10 70,20 Q80,30 70,40 Q60,50 50,40 Q40,50 30,40 Q20,30 30,20 Q40,10 50,20" fill="rgba(184,134,11,0.05)" opacity="0.3"/></svg>') repeat;
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50,15 C55,5 65,10 70,20 C80,30 75,40 65,45 C55,50 50,40 45,35 C35,35 20,40 25,20 C30,10 40,5 50,15" fill="rgba(221,193,33,0.08)" opacity="0.3"/></svg>') repeat,
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50,20 Q60,10 70,20 Q80,30 70,40 Q60,50 50,40 Q40,50 30,40 Q20,30 30,20 Q40,10 50,20" fill="rgba(221,193,33,0.05)" opacity="0.3"/></svg>') repeat;
             opacity: 0.3;
             z-index: -1;
         }
@@ -59,7 +59,7 @@
             top: 0;
             width: 50%;
             height: 100vh;
-            background: linear-gradient(135deg, #d4af37 0%, #ffd700 50%, #b8860b 100%);
+            background: linear-gradient(135deg, #DDC121 0%, #f5e36c 50%, #c9a91b 100%);
             transition: transform 1.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
             display: flex;
             flex-direction: column;
@@ -67,7 +67,7 @@
             align-items: center;
             text-align: center;
             padding: 20px;
-            box-shadow: 0 0 30px rgba(212, 175, 55, 0.3);
+            box-shadow: 0 0 30px rgba(221, 193, 33, 0.3);
             pointer-events: all;
         }
         
@@ -131,27 +131,27 @@
         
         .cover h1 {
             font-family: 'Dancing Script', cursive;
-            font-size: 4rem; /* Aumentado de 3.5rem */
+            font-size: 4rem;
             margin-bottom: 10px;
             font-weight: 700;
         }
         
         .cover .xv {
-            font-size: 5rem; /* Aumentado de 4rem */
+            font-size: 5rem;
             font-weight: bold;
             margin: 20px 0;
             text-shadow: 3px 3px 8px rgba(0,0,0,0.6);
         }
         
         .cover .years {
-            font-size: 2.2rem; /* Aumentado de 1.8rem */
+            font-size: 2.2rem;
             margin-bottom: 30px;
             letter-spacing: 1px;
         }
         
         .cover .name {
             font-family: 'Dancing Script', cursive;
-            font-size: 4rem; /* Aumentado de 3.2rem */
+            font-size: 4rem;
             margin-bottom: 15px;
             font-weight: 700;
             color: #fff;
@@ -168,29 +168,29 @@
             bottom: -10px;
             left: 50%;
             transform: translateX(-50%);
-            width: 80%; /* Aumentado de 60% */
-            height: 4px; /* Aumentado de 3px */
-            background: rgba(255,255,255,0.8); /* Más visible */
+            width: 80%;
+            height: 4px;
+            background: rgba(255,255,255,0.8);
             border-radius: 3px;
         }
         
         .cover .family {
-            font-size: 1.8rem; /* Aumentado de 1.3rem */
+            font-size: 1.8rem;
             margin-bottom: 30px;
             opacity: 0.95;
-            font-weight: 600; /* Más negrita */
+            font-weight: 600;
             letter-spacing: 0.5px;
-            text-shadow: 2px 2px 5px rgba(0,0,0,0.7); /* Sombra más pronunciada */
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
         }
         
         @keyframes nameGlow {
             0% {
                 text-shadow: 3px 3px 8px rgba(0,0,0,0.5), 
-                             0 0 15px rgba(255,255,255,0.5); /* Más brillo */
+                             0 0 15px rgba(255,255,255,0.5);
             }
             100% {
                 text-shadow: 3px 3px 15px rgba(0,0,0,0.7), 
-                            0 0 25px rgba(255,255,255,0.7); /* Más brillo */
+                            0 0 25px rgba(255,255,255,0.7);
             }
         }
         
@@ -226,7 +226,7 @@
         
         .open-button:hover {
             background: white;
-            color: #d4af37;
+            color: #DDC121;
             transform: scale(1.1);
             box-shadow: 0 12px 35px rgba(0,0,0,0.3);
         }
@@ -237,40 +237,40 @@
         
         /* Contenido puerta derecha mejorado - Más grande y visible */
         .castle-door-right .cover-content {
-            opacity: 1; /* Cambiado de 0.9 a 1 para máxima visibilidad */
-            text-shadow: 3px 3px 8px rgba(0,0,0,0.8); /* Sombra más pronunciada */
+            opacity: 1;
+            text-shadow: 3px 3px 8px rgba(0,0,0,0.8);
         }
         
         .castle-door-right h2 {
             font-family: 'Dancing Script', cursive;
-            font-size: 3rem; /* Aumentado de 2.2rem */
-            margin: 30px 0; /* Más espacio */
-            color: #fff; /* Blanco puro */
-            text-shadow: 3px 3px 8px rgba(0,0,0,0.8); /* Sombra más pronunciada */
-            font-weight: 700; /* Más negrita */
+            font-size: 3rem;
+            margin: 30px 0;
+            color: #fff;
+            text-shadow: 3px 3px 8px rgba(0,0,0,0.8);
+            font-weight: 700;
         }
         
         .castle-door-right div {
-            font-size: 1.5rem; /* Aumentado de 1.1rem */
+            font-size: 1.5rem;
             line-height: 1.6;
-            color: #fff; /* Blanco puro */
-            text-shadow: 2px 2px 5px rgba(0,0,0,0.7); /* Sombra más pronunciada */
+            color: #fff;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
             font-weight: 500;
             margin-bottom: 20px;
         }
         
         /* Corona en puerta derecha - Más grande y visible */
         .castle-door-right .crown-container {
-            width: 150px; /* Aumentado de 120px */
-            height: 120px; /* Aumentado de 100px */
-            margin: 0 auto 40px; /* Más margen */
+            width: 150px;
+            height: 120px;
+            margin: 0 auto 40px;
         }
         
         .castle-door-right .crown {
-            width: 120px; /* Aumentado de 60px */
-            height: 80px; /* Aumentado de 45px */
-            background: linear-gradient(45deg, #ffd700, #ffffff, #ffd700); /* Más brillante */
-            box-shadow: 0 0 20px rgba(255, 215, 0, 0.7); /* Sombra más pronunciada */
+            width: 120px;
+            height: 80px;
+            background: linear-gradient(45deg, #DDC121, #ffffff, #DDC121);
+            box-shadow: 0 0 20px rgba(221, 193, 33, 0.7);
         }
         
         /* Decoraciones florales en dorado */
@@ -286,11 +286,11 @@
         }
         
         .floral-gold {
-            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50,15 C60,5 75,10 80,25 C90,40 85,55 70,60 C55,65 50,50 45,45 C35,35 20,40 25,25 C30,10 40,5 50,15" fill="%23d4af37"/><circle cx="50" cy="50" r="10" fill="%23ffdf46"/><path d="M50,15 C45,20 42,25 40,30" stroke="%23ffdf46" stroke-width="1.5" fill="none"/><path d="M50,15 C55,20 58,25 60,30" stroke="%23ffdf46" stroke-width="1.5" fill="none"/></svg>');
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50,15 C60,5 75,10 80,25 C90,40 85,55 70,60 C55,65 50,50 45,45 C35,35 20,40 25,25 C30,10 40,5 50,15" fill="%23DDC121"/><circle cx="50" cy="50" r="10" fill="%23f5e36c"/><path d="M50,15 C45,20 42,25 40,30" stroke="%23f5e36c" stroke-width="1.5" fill="none"/><path d="M50,15 C55,20 58,25 60,30" stroke="%23f5e36c" stroke-width="1.5" fill="none"/></svg>');
         }
         
         .floral-light-gold {
-            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50,20 Q60,10 70,20 Q80,30 70,40 Q60,50 50,40 Q40,50 30,40 Q20,30 30,20 Q40,10 50,20" fill="%23ffd700"/><circle cx="50" cy="30" r="5" fill="%23ffffff"/><path d="M50,20 L50,40 M40,30 L60,30" stroke="%23ffffff" stroke-width="1.5"/></svg>');
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50,20 Q60,10 70,20 Q80,30 70,40 Q60,50 50,40 Q40,50 30,40 Q20,30 30,20 Q40,10 50,20" fill="%23DDC121"/><circle cx="50" cy="30" r="5" fill="%23ffffff"/><path d="M50,20 L50,40 M40,30 L60,30" stroke="%23ffffff" stroke-width="1.5"/></svg>');
         }
         
         /* Posicionamiento de flores */
@@ -329,7 +329,7 @@
         .crown {
             width: 100px;
             height: 70px;
-            background: linear-gradient(45deg, #d4af37, #ffd700, #b8860b);
+            background: linear-gradient(45deg, #DDC121, #f5e36c, #c9a91b);
             clip-path: polygon(
                 0% 100%, 
                 10% 40%, 20% 60%,
@@ -338,7 +338,7 @@
                 70% 40%, 80% 60%,
                 90% 40%, 100% 100%
             );
-            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+            box-shadow: 0 4px 15px rgba(221, 193, 33, 0.3);
             position: absolute;
             top: 50%;
             left: 50%;
@@ -366,7 +366,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M30,50 Q35,30 50,35 Q65,30 70,50 Q65,70 50,65 Q35,70 30,50" fill="rgba(212,175,55,0.1)"/></svg>') repeat;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M30,50 Q35,30 50,35 Q65,30 70,50 Q65,70 50,65 Q35,70 30,50" fill="rgba(221,193,33,0.1)"/></svg>') repeat;
             opacity: 0.2;
             z-index: 0;
         }
@@ -384,7 +384,7 @@
         .inner-content h2 {
             font-family: 'Dancing Script', cursive;
             font-size: 3rem;
-            color: #b8860b;
+            color: #c9a91b;
             margin-bottom: 30px;
             text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
         }
@@ -395,11 +395,13 @@
             color: #8b4513;
             margin-bottom: 30px;
             font-style: italic;
+            text-align: center;
+            padding: 0 15px;
         }
         
         .event-details {
-            background: rgba(212, 175, 55, 0.1);
-            border: 2px solid #d4af37;
+            background: rgba(221, 193, 33, 0.1);
+            border: 2px solid #DDC121;
             border-radius: 20px;
             padding: 30px;
             margin: 30px 0;
@@ -414,13 +416,13 @@
             right: -10px;
             width: 60px;
             height: 60px;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50,20 Q60,10 70,20 Q80,30 70,40 Q60,50 50,40 Q40,50 30,40 Q20,30 30,20 Q40,10 50,20" fill="%23d4af37"/></svg>') no-repeat;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50,20 Q60,10 70,20 Q80,30 70,40 Q60,50 50,40 Q40,50 30,40 Q20,30 30,20 Q40,10 50,20" fill="%23DDC121"/></svg>') no-repeat;
             opacity: 0.5;
         }
         
         .mass-details {
             background: rgba(255, 255, 255, 0.9);
-            border: 2px dashed #d4af37;
+            border: 2px dashed #DDC121;
             border-radius: 20px;
             padding: 25px;
             margin: 20px 0;
@@ -434,21 +436,35 @@
             left: -10px;
             width: 60px;
             height: 60px;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50,80 C60,90 70,85 80,75 C90,65 85,55 75,50 C65,55 60,45 50,60 C40,55 35,45 25,50 C15,55 10,65 20,75 C30,85 40,90 50,80" fill="%23d4af37"/></svg>') no-repeat;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50,80 C60,90 70,85 80,75 C90,65 85,55 75,50 C65,55 60,45 50,60 C40,55 35,45 25,50 C15,55 10,65 20,75 C30,85 40,90 50,80" fill="%23DDC121"/></svg>') no-repeat;
             opacity: 0.5;
         }
         
         .event-title {
             font-size: 1.3rem;
-            color: #b8860b;
+            color: #c9a91b;
             font-weight: 600;
             margin-bottom: 15px;
             font-family: 'Dancing Script', cursive;
         }
+
+        .cover .name {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3.5rem; /* Reducido de 4rem para mejor ajuste */
+            margin-bottom: 25px; /* Ajustado para mejor espaciado */
+            font-weight: 700;
+            color: #fff;
+            text-shadow: 3px 3px 8px rgba(0,0,0,0.5);
+            letter-spacing: 1px;
+            position: relative;
+            display: inline-block;
+            animation: nameGlow 3s ease-in-out infinite alternate;
+            line-height: 1.2; /* Añadido para mejor legibilidad */
+        }
         
         .date-time {
             font-size: 1.5rem;
-            color: #d4af37;
+            color: #DDC121;
             font-weight: 600;
             margin-bottom: 20px;
         }
@@ -468,7 +484,7 @@
         }
         
         .action-button {
-            background: linear-gradient(45deg, #d4af37, #ffd700);
+            background: linear-gradient(45deg, #DDC121, #f5e36c);
             color: white;
             border: none;
             padding: 15px;
@@ -478,12 +494,12 @@
             transition: all 0.3s ease;
             font-family: 'Playfair Display', serif;
             font-weight: 600;
-            box-shadow: 0 4px 10px rgba(212, 175, 55, 0.3);
+            box-shadow: 0 4px 10px rgba(221, 193, 33, 0.3);
         }
         
         .action-button:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 15px rgba(212, 175, 55, 0.4);
+            box-shadow: 0 6px 15px rgba(221, 193, 33, 0.4);
         }
         
         /* Formulario de confirmación */
@@ -492,7 +508,7 @@
             border-radius: 20px;
             padding: 25px;
             margin: 20px 0 0;
-            border: 2px solid #d4af37;
+            border: 2px solid #DDC121;
             position: relative;
         }
         
@@ -503,12 +519,12 @@
             right: 10px;
             width: 40px;
             height: 40px;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50,20 C60,10 70,15 80,25 C90,35 85,45 75,50 C65,55 60,45 50,40 C40,45 35,55 25,50 C15,45 10,35 20,25 C30,15 40,10 50,20" fill="%23d4af37"/></svg>') no-repeat;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50,20 C60,10 70,15 80,25 C90,35 85,45 75,50 C65,55 60,45 50,40 C40,45 35,55 25,50 C15,45 10,35 20,25 C30,15 40,10 50,20" fill="%23DDC121"/></svg>') no-repeat;
             opacity: 0.3;
         }
         
         .rsvp-form h3 {
-            color: #b8860b;
+            color: #c9a91b;
             margin-bottom: 20px;
             font-family: 'Dancing Script', cursive;
             font-size: 1.8rem;
@@ -531,7 +547,7 @@
         .form-group select {
             width: 100%;
             padding: 12px;
-            border: 2px solid #d4af37;
+            border: 2px solid #DDC121;
             border-radius: 10px;
             font-family: 'Playfair Display', serif;
             background: rgba(255,255,255,0.9);
@@ -541,9 +557,9 @@
         .form-group input:focus,
         .form-group textarea:focus,
         .form-group select:focus {
-            border-color: #b8860b;
+            border-color: #c9a91b;
             outline: none;
-            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
+            box-shadow: 0 0 0 3px rgba(221, 193, 33, 0.2);
         }
         
         .form-group textarea {
@@ -552,7 +568,7 @@
         }
         
         .submit-button {
-            background: linear-gradient(45deg, #d4af37, #ffd700);
+            background: linear-gradient(45deg, #DDC121, #f5e36c);
             color: white;
             border: none;
             padding: 15px 30px;
@@ -563,12 +579,12 @@
             font-family: 'Playfair Display', serif;
             font-weight: 600;
             width: 100%;
-            box-shadow: 0 4px 10px rgba(212, 175, 55, 0.3);
+            box-shadow: 0 4px 10px rgba(221, 193, 33, 0.3);
         }
         
         .submit-button:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 15px rgba(212, 175, 55, 0.4);
+            box-shadow: 0 6px 15px rgba(221, 193, 33, 0.4);
         }
         
         /* Animación de confeti dorado */
@@ -576,13 +592,13 @@
             position: fixed;
             width: 10px;
             height: 10px;
-            background: #d4af37;
+            background: #DDC121;
             animation: confetti-fall 3s linear infinite;
             z-index: 1000;
         }
         
         .confetti:nth-child(odd) {
-            background: #ffd700;
+            background: #f5e36c;
             animation-duration: 2.5s;
         }
         
@@ -611,8 +627,8 @@
         }
         
         .countdown-item {
-            background: rgba(212, 175, 55, 0.1);
-            border: 2px solid #d4af37;
+            background: rgba(221, 193, 33, 0.1);
+            border: 2px solid #DDC121;
             border-radius: 15px;
             padding: 15px 5px;
             text-align: center;
@@ -621,7 +637,7 @@
         .countdown-number {
             font-size: 1.5rem;
             font-weight: bold;
-            color: #b8860b;
+            color: #c9a91b;
             display: block;
         }
         
@@ -636,7 +652,7 @@
             position: fixed;
             top: 20px;
             right: 20px;
-            background: rgba(212, 175, 55, 0.9);
+            background: rgba(221, 193, 33, 0.9);
             border: none;
             border-radius: 50%;
             width: 50px;
@@ -653,7 +669,7 @@
         }
         
         .music-control:hover {
-            background: #b8860b;
+            background: #c9a91b;
             transform: scale(1.1);
             box-shadow: 0 6px 15px rgba(0,0,0,0.3);
         }
@@ -671,7 +687,7 @@
             padding: 15px;
             border-radius: 50%;
             box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-            border: 2px solid #d4af37;
+            border: 2px solid #DDC121;
         }
         
         .scroll-indicator.visible {
@@ -682,8 +698,8 @@
         .scroll-arrow {
             width: 30px;
             height: 30px;
-            border-bottom: 4px solid #b8860b;
-            border-right: 4px solid #b8860b;
+            border-bottom: 4px solid #c9a91b;
+            border-right: 4px solid #c9a91b;
             transform: rotate(45deg);
             margin: 0 auto;
         }
@@ -712,37 +728,37 @@
         /* Ajuste para móviles */
         @media (max-width: 480px) {
             .cover h1 {
-                font-size: 3rem; /* Ajustado para móvil */
+                font-size: 3rem;
             }
             
             .cover .xv {
-                font-size: 4rem; /* Ajustado para móvil */
+                font-size: 4rem;
             }
             
             .cover .name {
-                font-size: 3.2rem; /* Ajustado para móvil */
+                font-size: 3.2rem;
             }
             
             .cover .family {
-                font-size: 1.5rem; /* Ajustado para móvil */
+                font-size: 1.5rem;
             }
             
             .castle-door-right h2 {
-                font-size: 2.2rem; /* Ajustado para móvil */
+                font-size: 2.2rem;
             }
             
             .castle-door-right div {
-                font-size: 1.2rem; /* Ajustado para móvil */
+                font-size: 1.2rem;
             }
             
             .castle-door-right .crown-container {
-                width: 120px; /* Ajustado para móvil */
-                height: 100px; /* Ajustado para móvil */
+                width: 120px;
+                height: 100px;
             }
             
             .castle-door-right .crown {
-                width: 90px; /* Ajustado para móvil */
-                height: 60px; /* Ajustado para móvil */
+                width: 90px;
+                height: 60px;
             }
             
             .inner-content h2 {
@@ -758,8 +774,8 @@
             .scroll-arrow {
                 width: 25px;
                 height: 25px;
-                border-bottom: 3px solid #b8860b;
-                border-right: 3px solid #b8860b;
+                border-bottom: 3px solid #c9a91b;
+                border-right: 3px solid #c9a91b;
             }
             
             .floral-decoration {
@@ -776,6 +792,15 @@
                 width: 80px;
                 height: 60px;
             }
+            
+            .action-buttons {
+                grid-template-columns: 1fr;
+            }
+
+            .cover .name {
+                font-size: 2.8rem; /* Ajustado para pantallas pequeñas */
+                line-height: 1.1;
+            }
         }
     </style>
 </head>
@@ -790,20 +815,19 @@
                     <h1>Mis</h1>
                     <div class="xv">XV</div>
                     <div class="years">años</div>
-                    <div class="name">Ana Sofia</div>
-                    <div class="family">Familia Hurtado Ruiz</div>
+                    <div class="name">Ana Sofia Hurtado Ruiz</div> <!-- Cambiado aquí -->
                     <button class="open-button" onclick="openInvitation()">
                         Mira nuestra invitación
                     </button>
                 </div>
             </div>
-            
+
             <div class="castle-door castle-door-right">
                 <div class="floral-decoration floral-top-right floral-gold"></div>
                 <div class="floral-decoration floral-bottom-right floral-light-gold"></div>
                 <div class="cover-content">
                     <div class="crown-container" style="width: 150px; height: 120px;">
-                        <div class="crown" style="width: 120px; height: 80px; background: linear-gradient(45deg, #ffd700, #ffffff, #ffd700); box-shadow: 0 0 20px rgba(255, 215, 0, 0.7);"></div>
+                        <div class="crown" style="width: 120px; height: 80px; background: linear-gradient(45deg, #DDC121, #ffffff, #DDC121); box-shadow: 0 0 20px rgba(221, 193, 33, 0.7);"></div>
                     </div>
                     <h2>¡Celebremos juntos!</h2>
                     <div>Una noche mágica<br>te espera...</div>
@@ -846,7 +870,10 @@
             </div>
             
             <div class="invitation-text">
-                Porque quiero compartir contigo este momento tan especial de mi vida. Te invitamos a mi fiesta de XV años, donde habrá amor, risas y recuerdos inolvidables.
+                Dicen que cuando despertamos tenemos diez segundos para recordar lo que soñamos la noche anterior.<br><br>
+                Un sueño que hoy es realidad:<br>
+                ¡Mi fiesta de 15 Años!<br><br>
+                Tu presencia ayudará a transformar mi noche inolvidable en el día más importante de mi vida...
             </div>
             
             <!-- Detalles de la Misa -->
@@ -889,6 +916,7 @@
                             <option value="3">3 acompañantes</option>
                             <option value="4">4 acompañante</option>
                             <option value="5">5 acompañantes</option>
+                            <option value="6">6 acompañantes</option>
                         </select>
                     </div>
                     <button class="submit-button" onclick="submitRSVP()">Confirmar Asistencia</button>
@@ -898,6 +926,7 @@
             <div class="action-buttons">
                 <button class="action-button" onclick="openMap()">📍 Ubicación</button>
                 <button class="action-button" onclick="showWishes()">💝 Buzón de deseos</button>
+                <button class="action-button" onclick="showDressCode()" style="grid-column: 1 / -1;">👔 Vestimenta Formal</button>
             </div>
             
             <!-- Formulario de deseos -->
@@ -912,6 +941,26 @@
                     <textarea id="wishMessage" placeholder="Escribe tus mejores deseos..." required></textarea>
                 </div>
                 <button class="submit-button" onclick="submitWish()">Enviar Mensaje</button>
+            </div>
+            
+            <!-- Vestimenta Formal -->
+            <div class="rsvp-form" id="dressCode" style="display: none;">
+                <h3>👔 Vestimenta Formal</h3>
+                <div style="text-align: left; color: #8b4513; line-height: 1.6;">
+                    <p><strong>Para Caballeros:</strong><br>
+                    - Traje formal o de gala<br>
+                    - Corbata o corbatín<br>
+                    - Zapatos de vestir</p>
+                    
+                    <p><strong>Para Damas:</strong><br>
+                    - Vestido largo o de cóctel<br>
+                    - Tacones o zapatos elegantes<br>
+                    - Accesorios acordes a la ocasión</p>
+                    
+                    <p style="text-align: center; font-style: italic; margin-top: 15px;">
+                    "La elegancia no consiste en llamar la atención,<br>sino en ser recordado" - Giorgio Armani
+                    </p>
+                </div>
             </div>
         </div>
     </div>
@@ -998,7 +1047,7 @@
                 
                 if (distance < 0) {
                     clearInterval(countdownInterval);
-                    document.getElementById('countdown').innerHTML = '<div style="grid-column: 1/-1; color: #b8860b; font-size: 1.5rem; font-weight: bold;">¡Es hoy! 🎉</div>';
+                    document.getElementById('countdown').innerHTML = '<div style="grid-column: 1/-1; color: #c9a91b; font-size: 1.5rem; font-weight: bold;">¡Es hoy! 🎉</div>';
                 }
             }, 1000);
         }
@@ -1049,7 +1098,9 @@
         function showRSVP() {
             const form = document.getElementById('rsvpForm');
             const wishesForm = document.getElementById('wishesForm');
+            const dressCode = document.getElementById('dressCode');
             wishesForm.style.display = 'none';
+            dressCode.style.display = 'none';
             form.style.display = form.style.display === 'none' ? 'block' : 'none';
         }
         
@@ -1057,8 +1108,20 @@
         function showWishes() {
             const form = document.getElementById('wishesForm');
             const rsvpForm = document.getElementById('rsvpForm');
+            const dressCode = document.getElementById('dressCode');
             rsvpForm.style.display = 'none';
+            dressCode.style.display = 'none';
             form.style.display = form.style.display === 'none' ? 'block' : 'none';
+        }
+        
+        // Mostrar código de vestimenta
+        function showDressCode() {
+            const dressCode = document.getElementById('dressCode');
+            const rsvpForm = document.getElementById('rsvpForm');
+            const wishesForm = document.getElementById('wishesForm');
+            rsvpForm.style.display = 'none';
+            wishesForm.style.display = 'none';
+            dressCode.style.display = dressCode.style.display === 'none' ? 'block' : 'none';
         }
         
         // Enviar confirmación RSVP
