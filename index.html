@@ -1,0 +1,1151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis XV Años - Ana Sofia</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Playfair+Display:wght@400;600&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Playfair Display', serif;
+            background: #fffaf0;
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+        
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50,15 C55,5 65,10 70,20 C80,30 75,40 65,45 C55,50 50,40 45,35 C35,35 20,40 25,20 C30,10 40,5 50,15" fill="rgba(212,175,55,0.08)" opacity="0.3"/></svg>') repeat,
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50,20 Q60,10 70,20 Q80,30 70,40 Q60,50 50,40 Q40,50 30,40 Q20,30 30,20 Q40,10 50,20" fill="rgba(184,134,11,0.05)" opacity="0.3"/></svg>') repeat;
+            opacity: 0.3;
+            z-index: -1;
+        }
+        
+        .invitation-container {
+            max-width: 400px;
+            margin: 0 auto;
+            position: relative;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+        
+        /* Portada - Puertas mejoradas */
+        .cover {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            z-index: 1000;
+            pointer-events: none;
+        }
+        
+        .castle-door {
+            position: absolute;
+            top: 0;
+            width: 50%;
+            height: 100vh;
+            background: linear-gradient(135deg, #d4af37 0%, #ffd700 50%, #b8860b 100%);
+            transition: transform 1.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.3);
+            pointer-events: all;
+        }
+        
+        .castle-door::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M20,50 Q30,20 50,30 Q70,20 80,50 Q70,80 50,70 Q30,80 20,50" fill="rgba(255,255,255,0.2)"/></svg>') repeat;
+            opacity: 0.2;
+            pointer-events: none;
+        }
+        
+        .castle-door-left {
+            left: 0;
+            border-top-right-radius: 50px;
+            border-bottom-right-radius: 50px;
+        }
+        
+        .castle-door-right {
+            right: 0;
+            border-top-left-radius: 50px;
+            border-bottom-left-radius: 50px;
+        }
+        
+        .castle-door-left::after {
+            content: '';
+            position: absolute;
+            right: -5px;
+            top: 20%;
+            width: 10px;
+            height: 60%;
+            background: linear-gradient(to bottom, rgba(139, 69, 19, 0.8), rgba(101, 67, 33, 0.8));
+            border-radius: 5px;
+        }
+        
+        .castle-door-right::after {
+            content: '';
+            position: absolute;
+            left: -5px;
+            top: 20%;
+            width: 10px;
+            height: 60%;
+            background: linear-gradient(to bottom, rgba(139, 69, 19, 0.8), rgba(101, 67, 33, 0.8));
+            border-radius: 5px;
+        }
+        
+        .cover.open .castle-door-left {
+            transform: translateX(-100%);
+        }
+        
+        .cover.open .castle-door-right {
+            transform: translateX(100%);
+        }
+        
+        .cover-content {
+            color: white;
+            text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
+        }
+        
+        .cover h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 4rem; /* Aumentado de 3.5rem */
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        .cover .xv {
+            font-size: 5rem; /* Aumentado de 4rem */
+            font-weight: bold;
+            margin: 20px 0;
+            text-shadow: 3px 3px 8px rgba(0,0,0,0.6);
+        }
+        
+        .cover .years {
+            font-size: 2.2rem; /* Aumentado de 1.8rem */
+            margin-bottom: 30px;
+            letter-spacing: 1px;
+        }
+        
+        .cover .name {
+            font-family: 'Dancing Script', cursive;
+            font-size: 4rem; /* Aumentado de 3.2rem */
+            margin-bottom: 15px;
+            font-weight: 700;
+            color: #fff;
+            text-shadow: 3px 3px 8px rgba(0,0,0,0.5);
+            letter-spacing: 1px;
+            position: relative;
+            display: inline-block;
+            animation: nameGlow 3s ease-in-out infinite alternate;
+        }
+        
+        .cover .name::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%; /* Aumentado de 60% */
+            height: 4px; /* Aumentado de 3px */
+            background: rgba(255,255,255,0.8); /* Más visible */
+            border-radius: 3px;
+        }
+        
+        .cover .family {
+            font-size: 1.8rem; /* Aumentado de 1.3rem */
+            margin-bottom: 30px;
+            opacity: 0.95;
+            font-weight: 600; /* Más negrita */
+            letter-spacing: 0.5px;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.7); /* Sombra más pronunciada */
+        }
+        
+        @keyframes nameGlow {
+            0% {
+                text-shadow: 3px 3px 8px rgba(0,0,0,0.5), 
+                             0 0 15px rgba(255,255,255,0.5); /* Más brillo */
+            }
+            100% {
+                text-shadow: 3px 3px 15px rgba(0,0,0,0.7), 
+                            0 0 25px rgba(255,255,255,0.7); /* Más brillo */
+            }
+        }
+        
+        .open-button {
+            background: rgba(255,255,255,0.3);
+            border: 3px solid white;
+            color: white;
+            padding: 20px 40px;
+            font-size: 1.3rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            backdrop-filter: blur(15px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .open-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: left 0.6s ease;
+        }
+        
+        .open-button:hover {
+            background: white;
+            color: #d4af37;
+            transform: scale(1.1);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.3);
+        }
+        
+        .open-button:hover::before {
+            left: 100%;
+        }
+        
+        /* Contenido puerta derecha mejorado - Más grande y visible */
+        .castle-door-right .cover-content {
+            opacity: 1; /* Cambiado de 0.9 a 1 para máxima visibilidad */
+            text-shadow: 3px 3px 8px rgba(0,0,0,0.8); /* Sombra más pronunciada */
+        }
+        
+        .castle-door-right h2 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3rem; /* Aumentado de 2.2rem */
+            margin: 30px 0; /* Más espacio */
+            color: #fff; /* Blanco puro */
+            text-shadow: 3px 3px 8px rgba(0,0,0,0.8); /* Sombra más pronunciada */
+            font-weight: 700; /* Más negrita */
+        }
+        
+        .castle-door-right div {
+            font-size: 1.5rem; /* Aumentado de 1.1rem */
+            line-height: 1.6;
+            color: #fff; /* Blanco puro */
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.7); /* Sombra más pronunciada */
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+        
+        /* Corona en puerta derecha - Más grande y visible */
+        .castle-door-right .crown-container {
+            width: 150px; /* Aumentado de 120px */
+            height: 120px; /* Aumentado de 100px */
+            margin: 0 auto 40px; /* Más margen */
+        }
+        
+        .castle-door-right .crown {
+            width: 120px; /* Aumentado de 60px */
+            height: 80px; /* Aumentado de 45px */
+            background: linear-gradient(45deg, #ffd700, #ffffff, #ffd700); /* Más brillante */
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.7); /* Sombra más pronunciada */
+        }
+        
+        /* Decoraciones florales en dorado */
+        .floral-decoration {
+            position: absolute;
+            width: 120px;
+            height: 120px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            z-index: 1;
+            opacity: 0.7;
+        }
+        
+        .floral-gold {
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50,15 C60,5 75,10 80,25 C90,40 85,55 70,60 C55,65 50,50 45,45 C35,35 20,40 25,25 C30,10 40,5 50,15" fill="%23d4af37"/><circle cx="50" cy="50" r="10" fill="%23ffdf46"/><path d="M50,15 C45,20 42,25 40,30" stroke="%23ffdf46" stroke-width="1.5" fill="none"/><path d="M50,15 C55,20 58,25 60,30" stroke="%23ffdf46" stroke-width="1.5" fill="none"/></svg>');
+        }
+        
+        .floral-light-gold {
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50,20 Q60,10 70,20 Q80,30 70,40 Q60,50 50,40 Q40,50 30,40 Q20,30 30,20 Q40,10 50,20" fill="%23ffd700"/><circle cx="50" cy="30" r="5" fill="%23ffffff"/><path d="M50,20 L50,40 M40,30 L60,30" stroke="%23ffffff" stroke-width="1.5"/></svg>');
+        }
+        
+        /* Posicionamiento de flores */
+        .floral-top-left {
+            top: 20px;
+            left: 20px;
+            transform: rotate(-15deg);
+        }
+        
+        .floral-top-right {
+            top: 20px;
+            right: 20px;
+            transform: rotate(15deg);
+        }
+        
+        .floral-bottom-left {
+            bottom: 20px;
+            left: 20px;
+            transform: rotate(15deg);
+        }
+        
+        .floral-bottom-right {
+            bottom: 20px;
+            right: 20px;
+            transform: rotate(-15deg);
+        }
+        
+        /* Corona rediseñada en dorado */
+        .crown-container {
+            position: relative;
+            width: 120px;
+            height: 100px;
+            margin: 0 auto 30px;
+        }
+        
+        .crown {
+            width: 100px;
+            height: 70px;
+            background: linear-gradient(45deg, #d4af37, #ffd700, #b8860b);
+            clip-path: polygon(
+                0% 100%, 
+                10% 40%, 20% 60%,
+                30% 40%, 40% 60%,
+                50% 30%, 60% 60%,
+                70% 40%, 80% 60%,
+                90% 40%, 100% 100%
+            );
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+        }
+        
+        /* Contenido interior con fondo claro */
+        .inner-content {
+            padding: 40px 20px;
+            text-align: center;
+            background: linear-gradient(to bottom, #fffaf0, #fff8e7);
+            min-height: 100vh;
+            position: relative;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1s ease 0.5s;
+            overflow: hidden;
+        }
+        
+        .inner-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M30,50 Q35,30 50,35 Q65,30 70,50 Q65,70 50,65 Q35,70 30,50" fill="rgba(212,175,55,0.1)"/></svg>') repeat;
+            opacity: 0.2;
+            z-index: 0;
+        }
+        
+        .inner-content > * {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .inner-content.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .inner-content h2 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3rem;
+            color: #b8860b;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+        
+        .invitation-text {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #8b4513;
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+        
+        .event-details {
+            background: rgba(212, 175, 55, 0.1);
+            border: 2px solid #d4af37;
+            border-radius: 20px;
+            padding: 30px;
+            margin: 30px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .event-details::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            width: 60px;
+            height: 60px;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50,20 Q60,10 70,20 Q80,30 70,40 Q60,50 50,40 Q40,50 30,40 Q20,30 30,20 Q40,10 50,20" fill="%23d4af37"/></svg>') no-repeat;
+            opacity: 0.5;
+        }
+        
+        .mass-details {
+            background: rgba(255, 255, 255, 0.9);
+            border: 2px dashed #d4af37;
+            border-radius: 20px;
+            padding: 25px;
+            margin: 20px 0;
+            position: relative;
+        }
+        
+        .mass-details::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: -10px;
+            width: 60px;
+            height: 60px;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50,80 C60,90 70,85 80,75 C90,65 85,55 75,50 C65,55 60,45 50,60 C40,55 35,45 25,50 C15,55 10,65 20,75 C30,85 40,90 50,80" fill="%23d4af37"/></svg>') no-repeat;
+            opacity: 0.5;
+        }
+        
+        .event-title {
+            font-size: 1.3rem;
+            color: #b8860b;
+            font-weight: 600;
+            margin-bottom: 15px;
+            font-family: 'Dancing Script', cursive;
+        }
+        
+        .date-time {
+            font-size: 1.5rem;
+            color: #d4af37;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        
+        .venue {
+            font-size: 1.2rem;
+            color: #8b4513;
+            margin-bottom: 15px;
+        }
+        
+        /* Botones de acción en dorado */
+        .action-buttons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin: 30px 0;
+        }
+        
+        .action-button {
+            background: linear-gradient(45deg, #d4af37, #ffd700);
+            color: white;
+            border: none;
+            padding: 15px;
+            border-radius: 15px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            box-shadow: 0 4px 10px rgba(212, 175, 55, 0.3);
+        }
+        
+        .action-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(212, 175, 55, 0.4);
+        }
+        
+        /* Formulario de confirmación */
+        .rsvp-form {
+            background: rgba(255,255,255,0.95);
+            border-radius: 20px;
+            padding: 25px;
+            margin: 20px 0 0;
+            border: 2px solid #d4af37;
+            position: relative;
+        }
+        
+        .rsvp-form::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 40px;
+            height: 40px;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50,20 C60,10 70,15 80,25 C90,35 85,45 75,50 C65,55 60,45 50,40 C40,45 35,55 25,50 C15,45 10,35 20,25 C30,15 40,10 50,20" fill="%23d4af37"/></svg>') no-repeat;
+            opacity: 0.3;
+        }
+        
+        .rsvp-form h3 {
+            color: #b8860b;
+            margin-bottom: 20px;
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.8rem;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        
+        .form-group label {
+            display: block;
+            color: #8b4513;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #d4af37;
+            border-radius: 10px;
+            font-family: 'Playfair Display', serif;
+            background: rgba(255,255,255,0.9);
+            transition: all 0.3s ease;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            border-color: #b8860b;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
+        }
+        
+        .form-group textarea {
+            height: 80px;
+            resize: vertical;
+        }
+        
+        .submit-button {
+            background: linear-gradient(45deg, #d4af37, #ffd700);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 15px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            width: 100%;
+            box-shadow: 0 4px 10px rgba(212, 175, 55, 0.3);
+        }
+        
+        .submit-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(212, 175, 55, 0.4);
+        }
+        
+        /* Animación de confeti dorado */
+        .confetti {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            background: #d4af37;
+            animation: confetti-fall 3s linear infinite;
+            z-index: 1000;
+        }
+        
+        .confetti:nth-child(odd) {
+            background: #ffd700;
+            animation-duration: 2.5s;
+        }
+        
+        .confetti:nth-child(3n) {
+            background: #ffffff;
+            animation-duration: 3.5s;
+        }
+        
+        @keyframes confetti-fall {
+            0% {
+                transform: translateY(-100vh) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) rotate(720deg);
+                opacity: 0;
+            }
+        }
+        
+        /* Countdown Timer */
+        .countdown {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin: 30px 0;
+        }
+        
+        .countdown-item {
+            background: rgba(212, 175, 55, 0.1);
+            border: 2px solid #d4af37;
+            border-radius: 15px;
+            padding: 15px 5px;
+            text-align: center;
+        }
+        
+        .countdown-number {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #b8860b;
+            display: block;
+        }
+        
+        .countdown-label {
+            font-size: 0.9rem;
+            color: #8b4513;
+            margin-top: 5px;
+        }
+        
+        /* Música de fondo */
+        .music-control {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(212, 175, 55, 0.9);
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            color: white;
+            font-size: 1.2rem;
+            cursor: pointer;
+            z-index: 1001;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .music-control:hover {
+            background: #b8860b;
+            transform: scale(1.1);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+        }
+        
+        /* Flecha de scroll mejorada */
+        .scroll-indicator {
+            position: fixed;
+            bottom: 40px;
+            right: 30px;
+            z-index: 1002;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            pointer-events: none;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 15px;
+            border-radius: 50%;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            border: 2px solid #d4af37;
+        }
+        
+        .scroll-indicator.visible {
+            opacity: 1;
+            animation: bounce 1.5s infinite;
+        }
+        
+        .scroll-arrow {
+            width: 30px;
+            height: 30px;
+            border-bottom: 4px solid #b8860b;
+            border-right: 4px solid #b8860b;
+            transform: rotate(45deg);
+            margin: 0 auto;
+        }
+        
+        .scroll-text {
+            color: #8b4513;
+            font-weight: bold;
+            margin-top: 10px;
+            font-size: 0.9rem;
+            text-shadow: none;
+            display: none;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-15px);
+            }
+            60% {
+                transform: translateY(-7px);
+            }
+        }
+
+        /* Ajuste para móviles */
+        @media (max-width: 480px) {
+            .cover h1 {
+                font-size: 3rem; /* Ajustado para móvil */
+            }
+            
+            .cover .xv {
+                font-size: 4rem; /* Ajustado para móvil */
+            }
+            
+            .cover .name {
+                font-size: 3.2rem; /* Ajustado para móvil */
+            }
+            
+            .cover .family {
+                font-size: 1.5rem; /* Ajustado para móvil */
+            }
+            
+            .castle-door-right h2 {
+                font-size: 2.2rem; /* Ajustado para móvil */
+            }
+            
+            .castle-door-right div {
+                font-size: 1.2rem; /* Ajustado para móvil */
+            }
+            
+            .castle-door-right .crown-container {
+                width: 120px; /* Ajustado para móvil */
+                height: 100px; /* Ajustado para móvil */
+            }
+            
+            .castle-door-right .crown {
+                width: 90px; /* Ajustado para móvil */
+                height: 60px; /* Ajustado para móvil */
+            }
+            
+            .inner-content h2 {
+                font-size: 2.5rem;
+            }
+            
+            .scroll-indicator {
+                bottom: 20px;
+                right: 15px;
+                padding: 12px;
+            }
+            
+            .scroll-arrow {
+                width: 25px;
+                height: 25px;
+                border-bottom: 3px solid #b8860b;
+                border-right: 3px solid #b8860b;
+            }
+            
+            .floral-decoration {
+                width: 80px;
+                height: 80px;
+            }
+            
+            .crown-container {
+                width: 100px;
+                height: 80px;
+            }
+            
+            .crown {
+                width: 80px;
+                height: 60px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="invitation-container">
+        <!-- Portada - Puertas del castillo -->
+        <div class="cover" id="cover">
+            <div class="castle-door castle-door-left">
+                <div class="floral-decoration floral-top-left floral-gold"></div>
+                <div class="floral-decoration floral-bottom-left floral-light-gold"></div>
+                <div class="cover-content">
+                    <h1>Mis</h1>
+                    <div class="xv">XV</div>
+                    <div class="years">años</div>
+                    <div class="name">Ana Sofia</div>
+                    <div class="family">Familia Hurtado Ruiz</div>
+                    <button class="open-button" onclick="openInvitation()">
+                        Mira nuestra invitación
+                    </button>
+                </div>
+            </div>
+            
+            <div class="castle-door castle-door-right">
+                <div class="floral-decoration floral-top-right floral-gold"></div>
+                <div class="floral-decoration floral-bottom-right floral-light-gold"></div>
+                <div class="cover-content">
+                    <div class="crown-container" style="width: 150px; height: 120px;">
+                        <div class="crown" style="width: 120px; height: 80px; background: linear-gradient(45deg, #ffd700, #ffffff, #ffd700); box-shadow: 0 0 20px rgba(255, 215, 0, 0.7);"></div>
+                    </div>
+                    <h2>¡Celebremos juntos!</h2>
+                    <div>Una noche mágica<br>te espera...</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Flecha de scroll -->
+        <div class="scroll-indicator" id="scrollIndicator">
+            <div class="scroll-arrow"></div>
+            <div class="scroll-text">Desliza hacia abajo</div>
+        </div>
+        
+        <!-- Contenido interior -->
+        <div class="inner-content">
+            <div class="crown-container">
+                <div class="crown"></div>
+            </div>
+            
+            <h2>¡Quiero celebrarlo contigo!</h2>
+            
+            <!-- Countdown Timer -->
+            <div class="countdown" id="countdown">
+                <div class="countdown-item">
+                    <span class="countdown-number" id="days">00</span>
+                    <div class="countdown-label">Días</div>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="hours">00</span>
+                    <div class="countdown-label">Horas</div>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="minutes">00</span>
+                    <div class="countdown-label">Minutos</div>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="seconds">00</span>
+                    <div class="countdown-label">Segundos</div>
+                </div>
+            </div>
+            
+            <div class="invitation-text">
+                Porque quiero compartir contigo este momento tan especial de mi vida. Te invitamos a mi fiesta de XV años, donde habrá amor, risas y recuerdos inolvidables.
+            </div>
+            
+            <!-- Detalles de la Misa -->
+            <div class="mass-details">
+                <div class="event-title">⛪ Misa de Acción de Gracias</div>
+                <div class="date-time">15 de Julio • 6:00 PM</div>
+                <div class="venue">📍 Iglesia San Agustín<br>Popayán, Cauca</div>
+            </div>
+            
+            <!-- Detalles de la Recepción -->
+            <div class="event-details">
+                <div class="event-title">🎉 Recepción</div>
+                <div class="date-time">19 de Julio • 7:00 PM</div>
+                <div class="venue">📍 IBIZA VIP - Salón de Eventos<br>Cra. 9 # 66n-01<br>Popayán, Cauca</div>
+                <button class="action-button" onclick="showRSVP()" style="width: 100%; margin-top: 20px; font-size: 1.1rem;">
+                    ✉️ Confirmar Asistencia
+                </button>
+                
+                <!-- Formulario RSVP -->
+                <div class="rsvp-form" id="rsvpForm" style="display: none;">
+                    <h3>Confirma tu Asistencia</h3>
+                    <div class="form-group">
+                        <label for="guestName">Nombre completo:</label>
+                        <input type="text" id="guestName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="attendance">¿Asistirás?</label>
+                        <select id="attendance" required>
+                            <option value="">Selecciona una opción</option>
+                            <option value="yes">Sí, asistiré</option>
+                            <option value="no">No podré asistir</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="companions">Número de acompañantes:</label>
+                        <select id="companions">
+                            <option value="0">Solo yo</option>
+                            <option value="1">1 acompañante</option>
+                            <option value="2">2 acompañantes</option>
+                            <option value="3">3 acompañantes</option>
+                            <option value="4">4 acompañante</option>
+                            <option value="5">5 acompañantes</option>
+                        </select>
+                    </div>
+                    <button class="submit-button" onclick="submitRSVP()">Confirmar Asistencia</button>
+                </div>
+            </div>
+            
+            <div class="action-buttons">
+                <button class="action-button" onclick="openMap()">📍 Ubicación</button>
+                <button class="action-button" onclick="showWishes()">💝 Buzón de deseos</button>
+            </div>
+            
+            <!-- Formulario de deseos -->
+            <div class="rsvp-form" id="wishesForm" style="display: none;">
+                <h3>Buzón de Deseos</h3>
+                <div class="form-group">
+                    <label for="wishName">Tu nombre:</label>
+                    <input type="text" id="wishName" required>
+                </div>
+                <div class="form-group">
+                    <label for="wishMessage">Tu mensaje para Ana Sofia:</label>
+                    <textarea id="wishMessage" placeholder="Escribe tus mejores deseos..." required></textarea>
+                </div>
+                <button class="submit-button" onclick="submitWish()">Enviar Mensaje</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Control de música -->
+    <button class="music-control" id="musicBtn" onclick="toggleMusic()">🎵</button>
+    
+    <!-- Audio para música de fondo -->
+    <audio id="backgroundMusic" loop>
+        <source src="fondomusic.mp3" type="audio/mpeg">
+        <source src="fondomusic.ogg" type="audio/ogg">
+    Tu navegador no soporta audio HTML5
+    </audio>
+    
+    <script>
+        let musicPlaying = false;
+        let countdownInterval;
+        let scrollTimeout;
+        
+        // Función para abrir la invitación
+        function openInvitation() {
+            document.getElementById('cover').classList.add('open');
+            setTimeout(() => {
+                document.querySelector('.inner-content').classList.add('visible');
+                createConfetti();
+                startCountdown();
+                
+                // Mostrar flecha de scroll después de 1 segundo
+                setTimeout(() => {
+                    document.getElementById('scrollIndicator').classList.add('visible');
+                }, 1000);
+            }, 1200);
+        }
+        
+        // Ocultar flecha cuando el usuario haga scroll
+        window.addEventListener('scroll', function() {
+            clearTimeout(scrollTimeout);
+            const scrollIndicator = document.getElementById('scrollIndicator');
+            
+            // Ocultar gradualmente al hacer scroll
+            scrollIndicator.style.opacity = '0';
+            
+            // Asegurarse de que se quite la clase visible después de la transición
+            scrollTimeout = setTimeout(() => {
+                scrollIndicator.classList.remove('visible');
+                scrollIndicator.style.opacity = '';
+            }, 500);
+        });
+        
+        // Crear efecto confeti
+        function createConfetti() {
+            for (let i = 0; i < 50; i++) {
+                setTimeout(() => {
+                    const confetti = document.createElement('div');
+                    confetti.className = 'confetti';
+                    confetti.style.left = Math.random() * 100 + 'vw';
+                    confetti.style.animationDelay = Math.random() * 3 + 's';
+                    document.body.appendChild(confetti);
+                    
+                    setTimeout(() => {
+                        confetti.remove();
+                    }, 4000);
+                }, i * 100);
+            }
+        }
+        
+        // Countdown timer
+        function startCountdown() {
+            const eventDate = new Date('2025-07-19T19:00:00').getTime();
+            
+            countdownInterval = setInterval(() => {
+                const now = new Date().getTime();
+                const distance = eventDate - now;
+                
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                
+                document.getElementById('days').textContent = days.toString().padStart(2, '0');
+                document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+                document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+                document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+                
+                if (distance < 0) {
+                    clearInterval(countdownInterval);
+                    document.getElementById('countdown').innerHTML = '<div style="grid-column: 1/-1; color: #b8860b; font-size: 1.5rem; font-weight: bold;">¡Es hoy! 🎉</div>';
+                }
+            }, 1000);
+        }
+        
+        // Control de música mejorado para Firefox
+        function toggleMusic() {
+            const music = document.getElementById('backgroundMusic');
+            const btn = document.getElementById('musicBtn');
+            
+            if (musicPlaying) {
+                music.pause();
+                btn.textContent = '🎵';
+                musicPlaying = false;
+            } else {
+                // Intenta reproducir con manejo de errores
+                const playPromise = music.play();
+                
+                if (playPromise !== undefined) {
+                    playPromise.then(() => {
+                        btn.textContent = '🔇';
+                        musicPlaying = true;
+                    }).catch(error => {
+                        // Muestra instrucciones si hay error
+                        btn.textContent = '▶️';
+                        alert("Por favor haz clic en cualquier parte de la página para activar la música");
+                        
+                        // Permite activar con clic en cualquier lugar
+                        document.body.addEventListener('click', function activateMusic() {
+                            music.play().then(() => {
+                                btn.textContent = '🔇';
+                                musicPlaying = true;
+                                document.body.removeEventListener('click', activateMusic);
+                            });
+                        }, { once: true });
+                    });
+                }
+            }
+        }
+        
+        // Abrir mapa
+        function openMap() {
+            const address = "Cra. 9 # 66n-01, Popayán, Cauca, IBIZA VIP Salón de Eventos";
+            const mapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`;
+            window.open(mapUrl, '_blank');
+        }
+        
+        // Mostrar formulario RSVP
+        function showRSVP() {
+            const form = document.getElementById('rsvpForm');
+            const wishesForm = document.getElementById('wishesForm');
+            wishesForm.style.display = 'none';
+            form.style.display = form.style.display === 'none' ? 'block' : 'none';
+        }
+        
+        // Mostrar formulario de deseos
+        function showWishes() {
+            const form = document.getElementById('wishesForm');
+            const rsvpForm = document.getElementById('rsvpForm');
+            rsvpForm.style.display = 'none';
+            form.style.display = form.style.display === 'none' ? 'block' : 'none';
+        }
+        
+        // Enviar confirmación RSVP
+        function submitRSVP() {
+            const name = document.getElementById('guestName').value;
+            const attendance = document.getElementById('attendance').value;
+            const companions = document.getElementById('companions').value;
+            
+            if (!name || !attendance) {
+                alert('Por favor completa todos los campos requeridos.');
+                return;
+            }
+            
+            const message = `Hola Ana Sofia! 
+
+Confirmación de asistencia:
+👤 Nombre: ${name}
+✅ Asistencia: ${attendance === 'yes' ? 'Sí asistiré' : 'No podré asistir'}
+👥 Acompañantes: ${companions}
+
+¡Nos vemos en tu gran celebración! 🎉`;
+            
+            const whatsappUrl = `https://wa.me/573105020793?text=${encodeURIComponent(message)}`;
+            window.open(whatsappUrl, '_blank');
+            
+            document.getElementById('rsvpForm').style.display = 'none';
+            alert('¡Gracias por confirmar! Te redirigimos a WhatsApp para enviar tu confirmación.');
+        }
+        
+        // Enviar mensaje de deseos
+        function submitWish() {
+            const name = document.getElementById('wishName').value;
+            const message = document.getElementById('wishMessage').value;
+            
+            if (!name || !message) {
+                alert('Por favor completa todos los campos.');
+                return;
+            }
+            
+            const whatsappMessage = `Hola Ana Sofia! 💝
+
+${name} te envía este mensaje especial:
+
+"${message}"
+
+¡Feliz celebración de tus XV años! 🎉👑`;
+            
+            const whatsappUrl = `https://wa.me/573160565397?text=${encodeURIComponent(whatsappMessage)}`;
+            window.open(whatsappUrl, '_blank');
+            
+            document.getElementById('wishesForm').style.display = 'none';
+            alert('¡Gracias por tu mensaje! Te redirigimos a WhatsApp para enviarlo.');
+        }
+        
+        // Inicializar countdown al cargar la página
+        window.addEventListener('load', () => {
+            // Si la invitación ya está abierta, iniciar countdown
+            if (document.getElementById('cover').classList.contains('open')) {
+                startCountdown();
+            }
+        });
+
+        // Intento de autoplay con manejo de permisos
+        document.addEventListener('DOMContentLoaded', function() {
+            const music = document.getElementById('backgroundMusic');
+            music.volume = 0.3; // Volumen bajo (30%)
+            
+            // Intenta reproducir después de interacción del usuario
+            const tryPlay = () => {
+                music.play().then(() => {
+                    document.getElementById('musicBtn').textContent = '🔇';
+                    musicPlaying = true;
+                }).catch(e => {
+                    console.log("Reproducción automática prevenida:", e);
+                });
+            };
+            
+            // Intenta al hacer clic en cualquier parte
+            document.body.addEventListener('click', function() {
+                tryPlay();
+            }, { once: true });
+            
+            // Intenta al hacer scroll (otro tipo de interacción)
+            window.addEventListener('scroll', function() {
+                tryPlay();
+            }, { once: true });
+        });
+    </script>
+</body>
+</html>
