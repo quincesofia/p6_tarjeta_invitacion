@@ -260,11 +260,11 @@
         }
         
         /* Corona en puerta derecha - Más grande y visible */
-        .castle-door-right .crown-container {
+        /* .castle-door-right .crown-container {
             width: 150px;
             height: 120px;
             margin: 0 auto 40px;
-        }
+        } */
         
         .castle-door-right .crown {
             width: 120px;
@@ -319,12 +319,12 @@
         }
         
         /* Corona rediseñada en dorado */
-        .crown-container {
+        /* .crown-container {
             position: relative;
             width: 120px;
             height: 100px;
             margin: 0 auto 30px;
-        }
+        } */
         
         .crown {
             width: 100px;
@@ -397,6 +397,21 @@
             font-style: italic;
             text-align: center;
             padding: 0 15px;
+        }
+
+        /* Mensaje de reserva de color */
+        .color-reserved {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2rem;
+            color: #DDC121;
+            text-align: center;
+            margin: 40px 0 20px;
+            padding: 20px;
+            border: 2px dashed #DDC121;
+            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.7);
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+            animation: pulse 2s infinite alternate;
         }
         
         .event-details {
@@ -690,6 +705,11 @@
             border: 2px solid #DDC121;
         }
         
+        /* .inner-content img[alt="Corona"],
+.castle-door-right img[alt="Corona"] {
+  max-width: none !important;
+  object-fit: contain;
+} */
         .scroll-indicator.visible {
             opacity: 1;
             animation: bounce 1.5s infinite;
@@ -722,32 +742,6 @@
             }
             60% {
                 transform: translateY(-7px);
-            }
-        }
-
-        /* Mensaje de reserva de color */
-        .color-reserved {
-            font-family: 'Dancing Script', cursive;
-            font-size: 2rem;
-            color: #DDC121;
-            text-align: center;
-            margin: 40px 0 20px;
-            padding: 20px;
-            border: 2px dashed #DDC121;
-            border-radius: 15px;
-            background: rgba(255, 255, 255, 0.7);
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-            animation: pulse 2s infinite alternate;
-        }
-
-        @keyframes pulse {
-            0% {
-                transform: scale(1);
-                box-shadow: 0 0 0 rgba(221, 193, 33, 0.4);
-            }
-            100% {
-                transform: scale(1.02);
-                box-shadow: 0 0 20px rgba(221, 193, 33, 0.6);
             }
         }
 
@@ -810,13 +804,16 @@
             }
             
             .crown-container {
-                width: 100px;
-                height: 80px;
+            width: 240px !important;
+            height: 200px !important;
+            margin: 0 auto 10px !important;
             }
-            
-            .crown {
-                width: 80px;
-                height: 60px;
+
+            .crown-container .crown,
+            .crown-container img {
+            width: 200px !important;
+            height: 140px !important;
+            max-width: none !important;
             }
             
             .action-buttons {
@@ -826,11 +823,6 @@
             .cover .name {
                 font-size: 2.8rem; /* Ajustado para pantallas pequeñas */
                 line-height: 1.1;
-            }
-
-            .color-reserved {
-                font-size: 1.5rem;
-                padding: 15px;
             }
         }
     </style>
@@ -857,9 +849,9 @@
                 <div class="floral-decoration floral-top-right floral-gold"></div>
                 <div class="floral-decoration floral-bottom-right floral-light-gold"></div>
                 <div class="cover-content">
-                    <div class="crown-container" style="width: 150px; height: 120px;">
-                        <div class="crown" style="width: 120px; height: 80px; background: linear-gradient(45deg, #DDC121, #ffffff, #DDC121); box-shadow: 0 0 20px rgba(221, 193, 33, 0.7);"></div>
-                    </div>
+                    <div style="width: 100%; display: flex; justify-content: center;">
+  <img src="corona.svg" alt="Corona" style="filter: drop-shadow(0 0 10px rgba(221, 193, 33, 0.7));">
+</div>
                     <h2>¡Celebremos juntos!</h2>
                     <div>Una noche mágica<br>te espera...</div>
                 </div>
@@ -874,9 +866,23 @@
         
         <!-- Contenido interior -->
         <div class="inner-content">
-            <div class="crown-container">
-                <div class="crown"></div>
-            </div>
+            <!-- <div style="
+  width: 240px !important;
+  height: 200px !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+">
+  <img src="corona.svg" alt="Corona" style="
+    max-width: none !important;
+  ">
+</div> -->
+            <div class="cover-content">
+                    <div style="width: 100%; display: flex; justify-content: center;">
+  <img src="corona.svg" alt="Corona" style="filter: drop-shadow(0 0 10px rgba(221, 193, 33, 0.7));">
+</div><br><br>
+                </div>
+
             
             <h2>¡Quiero celebrarlo contigo!</h2>
             
@@ -954,6 +960,11 @@
                 </div>
             </div>
             
+            <!-- <div class="action-buttons">
+                <button class="action-button" onclick="openMap()">📍 Ubicación</button>
+                <button class="action-button" onclick="showWishes()">💝 Buzón de deseos</button>
+                <button class="action-button" onclick="showDressCode()" style="grid-column: 1 / -1;">👔 Vestimenta Formal</button>
+            </div> -->
             <div class="action-buttons">
                 <button class="action-button" onclick="openMap()">📍 Ubicación</button>
                 <button class="action-button" onclick="showWishes()">💝 Buzón de deseos</button>
@@ -994,25 +1005,6 @@
                     </p>
                 </div>
             </div>
-            
-            <!-- Lluvia de sobres -->
-            <div class="rsvp-form" id="envelopesForm" style="display: none;">
-                <h3>💌 Lluvia de Sobres</h3>
-                <div style="text-align: left; color: #8b4513; line-height: 1.6;">
-                    <p>Como parte de nuestra tradición, tendremos el hermoso momento de la "Lluvia de Sobres".</p>
-                    
-                    <p><strong>¿Cómo participar?</strong><br>
-                    - Prepara un sobre con tu regalo<br>
-                    - Puede ser en efectivo o cheque<br>
-                    - Escribe tu nombre en el sobre<br>
-                    - Durante la fiesta habrá un momento especial para entregarlo</p>
-                    
-                    <p style="text-align: center; font-style: italic; margin-top: 15px; color: #DDC121;">
-                    "Tu generosidad ayudará a hacer realidad los sueños de nuestra quinceañera"
-                    </p>
-                </div>
-            </div>
-            
             <!-- Mensaje de reserva de color -->
             <div class="color-reserved">
                 Nos reservamos el color dorado para nuestra quinceañera
@@ -1154,10 +1146,8 @@
             const form = document.getElementById('rsvpForm');
             const wishesForm = document.getElementById('wishesForm');
             const dressCode = document.getElementById('dressCode');
-            const envelopesForm = document.getElementById('envelopesForm');
             wishesForm.style.display = 'none';
             dressCode.style.display = 'none';
-            envelopesForm.style.display = 'none';
             form.style.display = form.style.display === 'none' ? 'block' : 'none';
         }
         
@@ -1166,10 +1156,8 @@
             const form = document.getElementById('wishesForm');
             const rsvpForm = document.getElementById('rsvpForm');
             const dressCode = document.getElementById('dressCode');
-            const envelopesForm = document.getElementById('envelopesForm');
             rsvpForm.style.display = 'none';
             dressCode.style.display = 'none';
-            envelopesForm.style.display = 'none';
             form.style.display = form.style.display === 'none' ? 'block' : 'none';
         }
         
@@ -1178,23 +1166,9 @@
             const dressCode = document.getElementById('dressCode');
             const rsvpForm = document.getElementById('rsvpForm');
             const wishesForm = document.getElementById('wishesForm');
-            const envelopesForm = document.getElementById('envelopesForm');
             rsvpForm.style.display = 'none';
             wishesForm.style.display = 'none';
-            envelopesForm.style.display = 'none';
             dressCode.style.display = dressCode.style.display === 'none' ? 'block' : 'none';
-        }
-        
-        // Mostrar información sobre lluvia de sobres
-        function showEnvelopes() {
-            const envelopesForm = document.getElementById('envelopesForm');
-            const rsvpForm = document.getElementById('rsvpForm');
-            const wishesForm = document.getElementById('wishesForm');
-            const dressCode = document.getElementById('dressCode');
-            rsvpForm.style.display = 'none';
-            wishesForm.style.display = 'none';
-            dressCode.style.display = 'none';
-            envelopesForm.style.display = envelopesForm.style.display === 'none' ? 'block' : 'none';
         }
         
         // Enviar confirmación RSVP
@@ -1282,6 +1256,15 @@ ${name} te envía este mensaje especial:
                 tryPlay();
             }, { once: true });
         });
+
+//         document.addEventListener('DOMContentLoaded', function() {
+//   const coronaImg = document.querySelector('.inner-content img[alt="Corona"]');
+//   if(coronaImg) {
+//     coronaImg.style.width = '200px';
+//     coronaImg.style.height = '140px';
+//     coronaImg.style.maxWidth = 'none';
+//   }
+// });
     </script>
 </body>
 </html>
